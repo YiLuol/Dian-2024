@@ -7,6 +7,10 @@ struct item{
     int count;
 };
 
+int change(char a){
+    return(a-'0');
+}
+
 int main(){
     struct item a[5];
     for(int i=0;i<5;i++){
@@ -53,8 +57,8 @@ int main(){
             scanf("\n");
         }
     }
-    int total=0;
-    //next_turn:
+    int total=0,x=0;
+    while(x==0){
     while(1){
         int num1,num,i=0;
         char test[5];
@@ -81,12 +85,22 @@ int main(){
         }
     }
     int putin=0;
-    while(putin<total){
-        int put;
-        scanf("%d",&put);
-        putin+=put;
+    while(putin<total||total==0){
+        char put[5];
+        scanf("%s",&put);
+        if(strcmp(put,"END")==0){
+            x++;
+            break;
+        }else if(total==0){
+            printf("%d\n",putin);
+        }else{
+            int put1 =change(put[0]);
+            putin+=put1;
+        }
     }
-    printf("%d\n",putin-total);
-    //goto next_turn;
+    if(x==0){
+        printf("%d\n",putin-total);
+    }
+    }
     return 0;
 }
