@@ -10,5 +10,7 @@ int main(){
         putin+=put;
     }
     printf("%d",putin-price);
+    getchar();
+    getchar();
     return 0;
 }
