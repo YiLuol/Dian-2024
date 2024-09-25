@@ -9,5 +9,7 @@ int main(){
         printf("%c",item);
     }
     printf(" %d",price);
+    getchar();
+    getchar();
     return 0;
 }
